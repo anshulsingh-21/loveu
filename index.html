@@ -1,52 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Message for You</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            color: #333;
-            text-align: center;
-            padding: 20px;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Message for You</title>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #0f0f0f;
+        font-family: Arial, sans-serif;
+        color: white;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    /* 💖 Floating Hearts */
+    .heart {
+        position: absolute;
+        bottom: -20px;
+        font-size: 20px;
+        animation: floatUp 6s linear infinite;
+        opacity: 0.7;
+    }
+
+    @keyframes floatUp {
+        0% {
+            transform: translateY(0);
+            opacity: 0.7;
         }
-        h1 {
-            color: #ff6347;
+        100% {
+            transform: translateY(-100vh);
+            opacity: 0;
         }
-        p {
-            font-size: 18px;
+    }
+
+    .message-box {
+        max-width: 600px;
+        padding: 30px;
+        z-index: 2;
+    }
+
+    h1 {
+        color: #ff4d6d;
+        margin-bottom: 20px;
+        opacity: 0;
+        animation: fadeIn 2s ease forwards;
+        animation-delay: 0.5s;
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 1.6;
+        opacity: 0;
+        animation: fadeIn 2s ease forwards;
+    }
+
+    p:nth-of-type(1) { animation-delay: 1.5s; }
+    p:nth-of-type(2) { animation-delay: 3s; }
+    p:nth-of-type(3) { animation-delay: 4.5s; }
+    p:nth-of-type(4) { animation-delay: 6s; }
+    p:nth-of-type(5) { animation-delay: 7.5s; }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
         }
-        .message-box {
-            border: 2px solid #ff6347;
-            border-radius: 10px;
-            padding: 20px;
-            display: inline-block;
-            background-color: #fff;
+        to {
+            opacity: 1;
+            transform: translateY(0);
         }
-    </style>
+    }
+
+    audio {
+        margin-top: 20px;
+    }
+</style>
 </head>
 
 <body>
-    <div class="message-box">
-        <h1>Stay Strong and Keep Smiling</h1>
-        <p>Dear Sonal</p>
-        <p>i dont even know thats legit website im editing
-        and another thing are u gonna see it ? umm</p>
-        <p>hola, i hope u doing well sonal, if u still mad at me im sorry for everything, 
-        but sorry not gonna change anything, yeah i dont know why im editing.
-        no explanation but jesa dikhta hai wesa hota nhi... baki keep on grinding and 
-        have wonderful life ahead. Take care shawnty :)</p>
-        <p>and last thing im good, still learning many things</p>
-        <p>Anshul</p>
-    </div>
 
-   <audio controls loop>
-    <source src="song1.mp3" type="audio/mpeg">
-</audio>
+<!-- 💖 Hearts -->
+<div class="heart" style="left:10%;">❤️</div>
+<div class="heart" style="left:25%; animation-delay: 2s;">💖</div>
+<div class="heart" style="left:40%; animation-delay: 4s;">❤️</div>
+<div class="heart" style="left:60%; animation-delay: 1s;">💗</div>
+<div class="heart" style="left:75%; animation-delay: 3s;">❤️</div>
+<div class="heart" style="left:90%; animation-delay: 5s;">💞</div>
+
+<div class="message-box">
+    <h1>Stay Strong and Keep Smiling</h1>
+
+    <p>Dear Sonal</p>
+    <p>I hope you're doing well. If you're still mad at me, I'm sorry for everything.</p>
+    <p>Sorry won't change anything, but sometimes what we see isn't the full truth.</p>
+    <p>Keep grinding and have a wonderful life ahead. Take care shawnty :)</p>
+    <p>And last thing — I'm good. Still learning many things.<br><br>– Anshul</p>
+
+    <!-- 🎵 Music -->
+    <audio controls loop>
+        <source src="song1.mp3" type="audio/mpeg">
+    </audio>
+</div>
 
 </body>
 </html>
-
-
